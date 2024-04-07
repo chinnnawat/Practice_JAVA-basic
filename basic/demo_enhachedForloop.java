@@ -1,12 +1,4 @@
-/**
- * Innerdemo_array_of_obj
- */
-class Student {
-    int rollno;
-    String name;
-    int marks;
-}
-public class demo_array_of_obj {
+public class demo_enhachedForloop {
     public static void main(String[] args) {
         Student s1 = new Student();
         s1.rollno = 1;
@@ -29,8 +21,12 @@ public class demo_array_of_obj {
         students[1] = s2;
         students[2] = s3;
 
-        for(int i=0; i<students.length; i++){
-            System.out.println(students[i].rollno+ " " + students[i].name+ " " + students[i].marks);
+        for(Student std : students ){
+            System.out.println(std.rollno + " " + std.name + " ");
         }
+
+        String name = new String("chin");
+        System.out.println(name);
+        System.out.println(name.charAt(0));
     }
 }
