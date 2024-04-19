@@ -16,16 +16,25 @@ public class DemoJdbc {
         String uname = "postgres";
         String pass = "1202";
 
+        /* Add Data User Student */
+        int sid = 102;
+        String sname = "Jame";
+        int marks = 46;
+
+
         /* SQL */
 /*        String sql = "select * from student";     /* Select User */
-//        String sql = "insert into student values (3, 'Jane', 48 )" ;        /* Create User */
+//        String sql = "insert into student values ('" + sid + "', '" + sname + "', " + marks + ")";        /* Create User */
 //        String sql = "update student set sname='Max' where sid=3 ";     /* Update info User by sid */
-        String sql = "delete from student where sid=3";     /* Delete User */
+//        String sql = "delete from student where sid=3";     /* Delete User */
+        String sql = "insert into student values (?,?,?)";
 //        *************************************************************************************************************************
 //        Class.forName("org.postgresql.Driver");
         Connection con = DriverManager.getConnection(url, uname, pass);
         System.out.println("Connected Database");
-        Statement st = con.createStatement();
+
+//        Statement st = con.createStatement();
+        PreparedStatement st =  con.prepareStatement(sql);
 
         /* Get Data from Database */
 /*        while (rs.next()){
@@ -35,16 +44,22 @@ public class DemoJdbc {
 //        }
  */
 
-        /* Create Student
-        boolean status = st.execute(sql);
-        System.out.println(status);
-        */
+        /* Create Student */
+//        boolean status = st.execute(sql);
+//        System.out.println(status);
+
 
         /* Update info User */
 //        st.execute(sql);
 
         /* Delete User */
-        st.execute(sql);
+//        st.execute(sql);
+
+        /* Prepared Statement */
+        st.setInt(1,sid);
+        st.setString(2,sname);
+        st.setInt(3,marks);
+        st.execute();
 
 
         con.close();
