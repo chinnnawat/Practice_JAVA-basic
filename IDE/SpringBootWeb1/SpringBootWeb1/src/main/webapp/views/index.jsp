@@ -8,12 +8,13 @@
         <h2>John Calculator</h2>
 
          <form action="addAlien">
-                <label for="aid">Enter ID :</label>
-                <input type="text" id="aid" name="aid"><br>
-                <label for="aname">Enter Name :</label>
-                <input type="text" id="aname" name="aname"><br>
-                <input type="submit" value="Submit">
-            </form>
+             <label for="id">Enter ID :</label>
+             <input type="text" id="id" name="id"><br>
+             <label for="name">Enter Name :</label>
+             <input type="text" id="name" name="name"><br>
+             <input type="submit" value="Submit">
+         </form>
+
 
     </body>
 </html>
