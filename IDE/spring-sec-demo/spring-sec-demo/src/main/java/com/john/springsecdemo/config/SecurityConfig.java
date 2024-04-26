@@ -25,6 +25,8 @@ public class SecurityConfig {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private JwtFilter jwtFilter;
 
     @Bean
     public AuthenticationProvider authProvider() {
@@ -44,7 +46,9 @@ public class SecurityConfig {
                         .permitAll()
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .addFilterBefore(jwtFilter,UsernamePasswordAuthenticationFilter.class);
+
 
         return http.build();
     }
