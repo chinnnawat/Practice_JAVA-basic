@@ -6,3 +6,17 @@ VALUES
   (4, 'Java', 'Easy', 'try', 'throw', 'catch', 'finally', 'catch', 'Which keyword is used to define a block of code that will be tested for errors in Java?'),
   (5, 'Java', 'Easy', 'It indicates that a variable is constant.', 'It indicates that a method can be accessed without creating an instance of the class.', 'It indicates that the final value of a variable cannot be changed.', 'It indicates that a variable is constant.', 'It indicates that a variable is constant.', 'What does the keyword final indicate in Java?'),
   (6, 'Java', 'Easy', 'constant int x=5', 'final int x = 5', 'static int x-5', 'int x = 5;', 'constant int x=5;', 'What is the correct way to declare a constant integer variable in Java?');
+
+
+
+CREATE TABLE questions (
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    questionTitle VARCHAR(255),
+    option1 VARCHAR(255),
+    option2 VARCHAR(255),
+    option3 VARCHAR(255),
+    option4 VARCHAR(255),
+    rightAnswer VARCHAR(255),
+    difficultylevel VARCHAR(255),
+    category VARCHAR(255)
+);

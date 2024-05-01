@@ -22,5 +22,4 @@ public class Question {
     private String difficultylevel;
     private String category;
 
-
 }
