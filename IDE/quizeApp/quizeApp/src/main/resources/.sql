@@ -1,4 +1,4 @@
-INSERT INTO question (id, category, difficultylevel, option1, option2, option3, option4, rightAnswer, questionTitle)
+INSERT INTO question (id, category, difficultylevel, option1, option2, option3, option4, right_answer, question_title)
 VALUES
   (1, 'Java', 'Easy', 'class', 'interface', 'extends', 'inheritance', 'extends', 'What keyword in Java is used to define a new class?'),
   (2, 'Java', 'Easy', '4', '5', '6', '7', '6', 'What is the output of 3 + 3 in Java?'),

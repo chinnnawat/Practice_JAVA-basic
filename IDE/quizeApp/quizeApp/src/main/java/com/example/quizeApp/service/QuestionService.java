@@ -12,7 +12,13 @@ public class QuestionService {
     @Autowired
     QuestionDao questionDao;
 
+    // GetAll
     public List<Question> getAllQuestions() {
         return questionDao.findAll();
+    }
+
+    // GetByCategory
+    public List<Question> getQuestionByCategory(String category) {
+        return questionDao.findByCategory(category);
     }
 }
